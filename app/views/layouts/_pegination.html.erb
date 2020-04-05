@@ -1,0 +1,35 @@
+
+<% if @news_id < 3 %>
+  <div class="center">
+    <ul class="pagination">
+      <% if @news_id == 1 %>
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+      <% else  %>
+        <li class="waves-effect"><a href="<%= pegination_path(path, @news_id-1) %>"><i class="material-icons">chevron_left</i></a></li>
+      <% end %>
+      <% for n in 1..3+2 %>
+        <% if n == @news_id  %>
+          <li class="active"><a href="<%= pegination_path path, n %>"><%= n %></a></li>
+        <% else %>
+          <li class="waves-effect"><a href="<%= pegination_path path, n %>"><%= n %></a></li>
+        <% end %>
+      <% end %>
+      <li class="waves-effect"><a href="<%= pegination_path path, @news_id+1 %>"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+  </div>
+<% else %>
+  <div class="center">
+    <ul class="pagination">
+      <li class="waves-effect"><a href="<%= pegination_path path  , @news_id-1%>"><i class="material-icons">chevron_left</i></a></li>
+      <% for n in @news_id-2..@news_id+2 %>
+        <% if n == @news_id  %>
+          <li class="active"><a href="<%= pegination_path path, n%>"><%= n %></a></li>
+        <% else %>
+          <li class="waves-effect"><a href="<%= pegination_path path, n %>"><%= n %></a></li>
+        <% end %>
+      <% end %>
+      <li class="waves-effect"><a href="<%= pegination_path path, @news_id+1%>"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+  </div>
+<% end %>
+

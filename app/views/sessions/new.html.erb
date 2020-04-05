@@ -1,0 +1,29 @@
+
+<h5 class="card-panel red white-text">
+  ログイン 
+</h5>
+
+<div class="row">
+  <%= form_with(url: "/login", method: "post", local: true, class:"col s12") do |form| %>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= form.email_field :email %>
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= form.password_field :password %>
+        <label for="password">password</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light red" type="submit" name="action">ログイン
+      </button>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  初めてですか? <a href="/signup" class="red-text">会員登録</a>
+</div>

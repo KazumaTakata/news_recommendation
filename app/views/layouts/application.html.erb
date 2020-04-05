@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FootballNews</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="navbar-fixed">
+      <%= render "layouts/navbar"  %> 
+    </div>
+    <%= render "layouts/flash"  %>
+
+    <% if @at_home  %>
+      <div class="slider">
+        <ul class="slides">
+          <% @slides.each do |slide|  %>
+            <li>
+              <a href="<%=  "posts/" + slide.id.to_s %>">
+                <img src="<%= slide.photourl  %>"> <!-- random image -->
+              </a>
+              <div class="caption center-align" style="pointer-events: none;">
+                <h4><%= slide.title  %></h4>
+              </div>
+            </li>
+          <% end %>
+          <ul>
+      </div>
+    <% end %>
+
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+  </body>
+</html>

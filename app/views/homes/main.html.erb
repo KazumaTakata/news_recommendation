@@ -1,0 +1,6 @@
+<% @categories.each  do  |category|  %>
+  <div class="category_container">
+    <%= render partial: category[:temp_url], locals: {head_title: category[:title] ,head_url: category[:url]}  %> 
+  </div>
+<% end %>
+

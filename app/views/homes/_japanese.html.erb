@@ -1,0 +1,13 @@
+
+<a class="waves-effect waves-light btn-large red" href="<%= head_url %>">
+  <%= head_title  %> 
+</a>
+
+
+<div class='table-wrapper'>
+  <% @japanese.each_with_index do |post, index| %>
+    <%= render partial: "homes/card" , locals: { post: post } %> 
+  <% end %>
+</div>
+
+

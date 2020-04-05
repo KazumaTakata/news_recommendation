@@ -1,0 +1,26 @@
+
+<h5 class="card-panel red white-text">
+  サインアップ 
+</h5>
+
+
+<div class="row">
+  <%= form_with(url: "/users", method: "post", local: true, class:"col s12") do |form| %>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= form.email_field :email %>
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= form.password_field :password %>
+        <label for="password">password</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light red" type="submit" name="action">登録
+      </button>
+    </div>
+  <% end %>
+</div>

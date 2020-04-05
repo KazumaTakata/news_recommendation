@@ -1,0 +1,29 @@
+<h3>
+  <%= @post.title  %>
+</h3>
+
+<div class="row">
+  <div class="left grey-text lighten-2">
+    <%= @post.date %> 
+    <%= @post.source %>
+  </div>
+  <div class="right">
+    <% if current_user != nil %>
+      <a href="/fav/<%= @post.id %>" class="waves-effect waves-light btn" id="favbutton">お気に入り</a>
+    <% end %>
+    <span class="red btn">
+      <%= @counter %> views
+    </span>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-image">
+    <img src="<%= @post.photourl %>">
+  </div>
+  <div class="card-content">
+    <p><%= @post.main_content %></p>
+  </div>
+</div>
+

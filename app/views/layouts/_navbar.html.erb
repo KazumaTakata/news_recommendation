@@ -1,0 +1,45 @@
+<nav>
+  <div class="nav-wrapper  grey lighten-5">
+    <a href="/" class="brand-logo red-text left">FootFreak</a>
+    <!-- Dropdown Trigger -->
+
+    <ul class="right ">
+
+
+      <a class='dropdown-trigger hide-on-med-and-up black-text text-lighten-4' href="#!" data-target='dropdown1'>
+        <i class="material-icons">menu</i>
+      </a>
+
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content red-text '  >
+        <li><a href="login" class="red-text">ログイン</a></li>
+        <li><a href="login" class="red-text">新着</a></li>
+        <li><a href="login" class="red-text">おすすめ</a></li>
+      </ul>
+    </ul>
+    <ul class="right hide-on-small-only">
+
+      <li>    
+        <div class="input-field">
+          <form>
+            <input type="text" placeholder="検索"  class="autocomplete red-text" >
+          </form>
+        </div>          
+      </li>      
+      <li><a href="/news" class="red-text">新着</a></li>
+      <% if logged_in? %>
+        <li><a href="/fav" class="red-text">お気に入り</a></li>
+        <li><a href="/recommend" class="red-text">おすすめ</a></li>
+      <% end%>
+
+      <% if !logged_in?  %>
+        <li><a href="/login" class="red-text">ログイン</a></li>
+      <% else %>
+        <li>
+          <%= link_to "ログアウト", logout_path, method: :delete, class: "red-text" %>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+</nav>

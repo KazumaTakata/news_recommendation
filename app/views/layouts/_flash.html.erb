@@ -1,0 +1,16 @@
+<% if !flash.empty? %>
+  <div class="card-panel pink lighten-2 white-text">
+    <div class="flash">
+      Error messages.
+    </div>
+    <% flash.each do |message_type, message| %>
+      <% if message.kind_of?(Array) %>
+        <% message.each do |m| %>
+          <div class="flash"><%= m %></div>
+        <% end %>     
+      <% else %>
+        <div class="flash"><%= message %></div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

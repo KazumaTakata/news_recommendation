@@ -1,0 +1,23 @@
+
+
+<h4 class="card-panel red white-text">
+  <%= title  %> 
+</h4>
+<% if posts.length > 0 %>
+  <% posts.each do |post| %>
+    <div class="card-margin">
+      <div class="card">
+        <div class="card-image">
+          <img src="<%= post.photourl %>">
+        </div>
+        <div class="card-content">
+          <a href="<%= "/posts/" + post.id.to_s %>"><%= post.title %></a>
+          <span class="card-title"></span>
+          <p><%= post.content %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  ポストはありません。
+<% end %>

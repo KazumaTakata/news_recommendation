@@ -1,0 +1,12 @@
+<% if logged_in? %>
+  <a class="waves-effect waves-light btn-large red" href="<%= head_url  %>">
+    <%= head_title  %> 
+  </a>
+
+  <div class='table-wrapper'>
+    <% @indexs.each do |index| %>
+      <%= render partial: "homes/card" , locals: { post: @posts.select{|post| post.id ==  index + 1}[0] } %> 
+    <% end %>
+  </div>
+<% end %>
+
