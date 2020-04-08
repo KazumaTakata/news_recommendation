@@ -5,7 +5,10 @@
 
   <div class='table-wrapper'>
     <% @indexs.each do |index| %>
-      <%= render partial: "homes/card" , locals: { post: @posts.select{|post| post.id ==  index + 1}[0] } %> 
+      <% post =  @posts.select{|post| post.id ==  index + 1}[0]  %>
+      <% if post != nil %>
+        <%= render partial: "homes/card" , locals: { post: post } %> 
+      <% end %>
     <% end %>
   </div>
 <% end %>

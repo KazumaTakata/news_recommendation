@@ -5,15 +5,17 @@
 <% indexs.each do |index| %>
   <div class="card-margin">
     <% post = @posts.select{|post| post.id ==  index + 1}[0] %>
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= post.photourl %>">
+    <% if post != nil %>
+      <div class="card">
+        <div class="card-image">
+          <img src="<%= post.photourl %>">
+        </div>
+        <div class="card-content">
+          <a href="<%= "posts/" + post.id.to_s %>"><%= post.title %></a>
+          <span class="card-title"></span>
+          <p><%= post.content %></p>
+        </div>
       </div>
-      <div class="card-content">
-        <a href="<%= "posts/" + post.id.to_s %>"><%= post.title %></a>
-        <span class="card-title"></span>
-        <p><%= post.content %></p>
-      </div>
-    </div>
+    <% end %>
   </div>
 <% end %>

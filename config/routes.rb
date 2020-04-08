@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'searchs/index'
+  get 'rankings/index'
+  get 'comments/create'
   get 'categories/index'
   get 'recommends/index'
   get 'news/index'
@@ -13,21 +16,20 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  
 
   get  '/posts/:id', to: 'posts#show'
+  post '/posts/:id/comments', to: 'comments#create'
 
   get  'fav/:id', to: 'favs#create'
   get  'fav', to: 'favs#index'
   get  'news', to: 'news#index'
+  get  'ranking', to: 'rankings#index'
   get  'recommend', to: 'recommends#index'
   get  'category/:id', to: 'categories#show'
 
-
-
-
-
-
   get '/signup',  to: 'users#new'
+  get '/search', to: 'searchs#index'
 
   resources :users
 

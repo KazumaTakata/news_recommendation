@@ -5,27 +5,47 @@
 
     <ul class="right ">
 
-
       <a class='dropdown-trigger hide-on-med-and-up black-text text-lighten-4' href="#!" data-target='dropdown1'>
         <i class="material-icons">menu</i>
       </a>
 
       <!-- Dropdown Structure -->
       <ul id='dropdown1' class='dropdown-content red-text '  >
-        <li><a href="login" class="red-text">ログイン</a></li>
-        <li><a href="login" class="red-text">新着</a></li>
-        <li><a href="login" class="red-text">おすすめ</a></li>
+        <li><a href="/ranking" class="red-text">ランキング</a></li>
+        <li><a href="/news" class="red-text">新着</a></li>
+        <% if logged_in? %>
+          <li><a href="/fav" class="red-text">お気に入り</a></li>
+          <li><a href="/recommend" class="red-text">おすすめ</a></li>
+        <% end%>
+
+        <% if !logged_in?  %>
+          <li><a href="/login" class="red-text">ログイン</a></li>
+        <% else %>
+          <li>
+            <%= link_to "ログアウト", logout_path, method: :delete, class: "red-text" %>
+          </li>
+        <% end %>
       </ul>
     </ul>
     <ul class="right hide-on-small-only">
-
       <li>    
-        <div class="input-field">
-          <form>
-            <input type="text" placeholder="検索"  class="autocomplete red-text" >
-          </form>
-        </div>          
+
+        <div class="row">
+          <%= form_with(url: "/search", method: "get" , class: "col s12", local: true ) do %>
+            <div class="row">
+              <div class="input-field col s6">
+                <%= text_field_tag(:search_word) %>
+              </div>
+              <div class="input-field col s6">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">検索
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </li>      
+
+      <li><a href="/ranking" class="red-text">ランキング</a></li>
       <li><a href="/news" class="red-text">新着</a></li>
       <% if logged_in? %>
         <li><a href="/fav" class="red-text">お気に入り</a></li>

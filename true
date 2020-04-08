@@ -1,0 +1,3 @@
+      invoke  active_record
+      remove    db/migrate/20200406083920_add_index_to_post.rb
+      create    db/migrate/20200406085636_add_index_to_post.rb

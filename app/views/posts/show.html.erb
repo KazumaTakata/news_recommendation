@@ -27,3 +27,32 @@
   </div>
 </div>
 
+<div class="card-panel red lighten-2 white-text">
+  コメント
+</div>
+
+<% if @comments.length > 0 %>
+  <ul class="collection">
+    <% @comments.each do |comment| %> 
+      <li class="collection-item"><%= comment.content %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h6>
+  まだコメントはありません。
+  <h6>
+<% end %>
+
+
+
+<div class="row">
+  <%= form_with(url: "/posts/#{@post.id}/comments", method: "post" ,local: true, class: "col" ) do %>
+    <div>
+      <%= label_tag :コメント %>
+      <%= text_field_tag(:comment) %>
+    </div>
+    <%= submit_tag("書き込み", :class=>"waves-effect waves-light btn red white-text") %>
+  <% end %>
+</div>
+
+
