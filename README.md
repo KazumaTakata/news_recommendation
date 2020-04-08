@@ -1,24 +1,23 @@
-t# README
+## Dependency
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ElasticSearch
+Mysql
 
-Things you may want to cover:
 
-* Ruby version
+## srape data
 
-* System dependencies
+```
+cd scraper
+ruby scraper.rb 
+```
 
-* Configuration
 
-* Database creation
+## start server
 
-* Database initialization
+```
+rails db:migrate
+rails s
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
