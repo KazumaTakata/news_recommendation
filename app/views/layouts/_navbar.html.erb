@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper  grey lighten-5">
-    <a href="/" class="brand-logo red-text left">FootFreak</a>
+    <a href="/" class="brand-logo left">FootFreak</a>
     <!-- Dropdown Trigger -->
 
     <ul class="right ">
@@ -10,19 +10,19 @@
       </a>
 
       <!-- Dropdown Structure -->
-      <ul id='dropdown1' class='dropdown-content red-text '  >
-        <li><a href="/ranking" class="red-text">ランキング</a></li>
-        <li><a href="/news" class="red-text">新着</a></li>
+      <ul id='dropdown1' class='dropdown-content'  >
+        <li><a href="/ranking" >ランキング</a></li>
+        <li><a href="/news" >新着</a></li>
         <% if logged_in? %>
-          <li><a href="/fav" class="red-text">お気に入り</a></li>
-          <li><a href="/recommend" class="red-text">おすすめ</a></li>
+          <li><a href="/fav" >お気に入り</a></li>
+          <li><a href="/recommend" >おすすめ</a></li>
         <% end%>
 
         <% if !logged_in?  %>
-          <li><a href="/login" class="red-text">ログイン</a></li>
+          <li><a href="/login" >ログイン</a></li>
         <% else %>
           <li>
-            <%= link_to "ログアウト", logout_path, method: :delete, class: "red-text" %>
+            <%= link_to "ログアウト", logout_path, method: :delete %>
           </li>
         <% end %>
       </ul>
@@ -37,7 +37,7 @@
                 <%= text_field_tag(:search_word) %>
               </div>
               <div class="input-field col s6">
-                <button class="btn waves-effect waves-light red" type="submit" name="action">検索
+                <button class="btn waves-effect waves-light" type="submit" name="action">検索
                 </button>
               </div>
             </div>
@@ -45,18 +45,18 @@
         </div>
       </li>      
 
-      <li><a href="/ranking" class="red-text">ランキング</a></li>
-      <li><a href="/news" class="red-text">新着</a></li>
+      <li><a href="/ranking">ランキング</a></li>
+      <li><a href="/news">新着</a></li>
       <% if logged_in? %>
-        <li><a href="/fav" class="red-text">お気に入り</a></li>
-        <li><a href="/recommend" class="red-text">おすすめ</a></li>
+        <li><a href="/fav">お気に入り</a></li>
+        <li><a href="/recommend">おすすめ</a></li>
       <% end%>
 
       <% if !logged_in?  %>
-        <li><a href="/login" class="red-text">ログイン</a></li>
+        <li><a href="/login">ログイン</a></li>
       <% else %>
         <li>
-          <%= link_to "ログアウト", logout_path, method: :delete, class: "red-text" %>
+          <%= link_to "ログアウト", logout_path, method: :delete  %>
         </li>
       <% end %>
     </ul>

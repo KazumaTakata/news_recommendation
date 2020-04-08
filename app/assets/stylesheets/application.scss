@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+@import "materialize/components/color-variables";
+$primary-color: color("yellow", "darken-2") !default;
+$secondary-color: color("yellow", "darken-2") !default;
+$navbar-font-color: $secondary-color;
+$button-flat-color: color("blue", "lighten-2") !default;
+$collection-bg-color: color("yellow", "darken-2") !default;
+$input-border: 1px solid grey !important;
+
+$off-black: rgba(0, 0, 0, 0.6);
+@import 'materialize';
+
 * {box-sizing: border-box;}
 
 .table-wrapper {
@@ -54,17 +66,7 @@
 
 footer {
     padding: 30px;
-    margin:40px 0;
-}
-
-input[type=text]:focus {
-    border-bottom: 1px solid red !important;
-    box-shadow: 0 1px 0 0 red !important;
-}
-
-input[type=text] {
-    border-bottom: 1px solid grey !important;
-    box-shadow: 0 0px 0 0 red !important;
+    margin-top:40px 0;
 }
 
 

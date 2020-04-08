@@ -11,7 +11,7 @@
     <% if current_user != nil %>
       <a href="/fav/<%= @post.id %>" class="waves-effect waves-light btn" id="favbutton">お気に入り</a>
     <% end %>
-    <span class="red btn">
+    <span class="btn">
       <%= @counter %> views
     </span>
   </div>
@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<div class="card-panel red lighten-2 white-text">
+<div class="card-panel ">
   コメント
 </div>
 
@@ -51,7 +51,7 @@
       <%= label_tag :コメント %>
       <%= text_field_tag(:comment) %>
     </div>
-    <%= submit_tag("書き込み", :class=>"waves-effect waves-light btn red white-text") %>
+    <%= submit_tag("書き込み", :class=>"waves-effect waves-light btn white-text") %>
   <% end %>
 </div>
 
