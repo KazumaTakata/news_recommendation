@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'mypages/index'
   get 'searchs/index'
   get 'rankings/index'
   get 'comments/create'
@@ -19,6 +20,12 @@ Rails.application.routes.draw do
   
 
   get  '/posts/:id', to: 'posts#show'
+  get  '/mypage', to: 'mypages#index'
+  get  '/mypage/edit', to: 'mypages#edit'
+  put  '/mypage', to: 'mypages#update'
+
+
+
   post '/posts/:id/comments', to: 'comments#create'
 
   get  'fav/:id', to: 'favs#create'

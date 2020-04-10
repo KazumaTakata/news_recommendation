@@ -2,34 +2,24 @@
   <div class="nav-wrapper  grey lighten-5">
     <a href="/" class="brand-logo left">FootFreak</a>
     <!-- Dropdown Trigger -->
-
     <ul class="right ">
-
-      <a class='dropdown-trigger hide-on-med-and-up black-text text-lighten-4' href="#!" data-target='dropdown1'>
+      <a class=' hide-on-med-and-up black-text text-lighten-4' onclick="openNav()">
         <i class="material-icons">menu</i>
       </a>
-
-      <!-- Dropdown Structure -->
-      <ul id='dropdown1' class='dropdown-content'  >
-        <li><a href="/ranking" >ランキング</a></li>
-        <li><a href="/news" >新着</a></li>
-        <% if logged_in? %>
-          <li><a href="/fav" >お気に入り</a></li>
-          <li><a href="/recommend" >おすすめ</a></li>
-        <% end%>
-
-        <% if !logged_in?  %>
-          <li><a href="/login" >ログイン</a></li>
-        <% else %>
-          <li>
-            <%= link_to "ログアウト", logout_path, method: :delete %>
-          </li>
-        <% end %>
-      </ul>
     </ul>
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
     <ul class="right hide-on-small-only">
       <li>    
-
         <div class="row">
           <%= form_with(url: "/search", method: "get" , class: "col s12", local: true ) do %>
             <div class="row">
@@ -50,6 +40,7 @@
       <% if logged_in? %>
         <li><a href="/fav">お気に入り</a></li>
         <li><a href="/recommend">おすすめ</a></li>
+        <li><a href="/mypage">マイページ</a></li>
       <% end%>
 
       <% if !logged_in?  %>

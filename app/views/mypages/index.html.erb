@@ -1,0 +1,26 @@
+<div>
+  <% if @current_user.img %>
+    <%= @current_user.img %> 
+<% else %>
+   <%= image_tag "icons8-cat-profile-64.png" %> 
+<% end %>
+</div>
+
+
+<div>
+  <% if @current_user.name %>
+    あなたの名前は<%= @current_user.name %> 
+<% else %>
+  まだ名前を設定していません。 
+<% end %>
+</div>
+
+<div class="margin-50">
+<a class="waves-effect waves-light btn" href="mypage/edit">
+  名前と写真を設定する
+</a>
+</div>
+
+
+
+

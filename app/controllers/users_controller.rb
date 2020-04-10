@@ -8,7 +8,6 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to root_path 
     else
-      debugger
       flash.now[:alert] = @user.errors.full_messages 
       render 'new'
     end

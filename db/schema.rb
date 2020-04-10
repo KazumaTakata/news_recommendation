@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_130003) do
+ActiveRecord::Schema.define(version: 2020_04_09_035122) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2020_04_06_130003) do
     t.string "email"
     t.string "password_digest"
     t.string "category"
+    t.string "name"
+    t.string "img"
   end
 
 end
