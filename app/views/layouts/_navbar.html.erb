@@ -19,24 +19,10 @@
       </div>
     </div>
     <ul class="right hide-on-small-only">
-      <li>    
-        <div class="row">
-          <%= form_with(url: "/search", method: "get" , class: "col s12", local: true ) do %>
-            <div class="row">
-              <div class="input-field col s6">
-                <%= text_field_tag(:search_word) %>
-              </div>
-              <div class="input-field col s6">
-                <button class="btn waves-effect waves-light" type="submit" name="action">検索
-                </button>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </li>      
-
       <li><a href="/ranking">ランキング</a></li>
       <li><a href="/news">新着</a></li>
+      <li><a href="/search">検索</a></li>
+
       <% if logged_in? %>
         <li><a href="/fav">お気に入り</a></li>
         <li><a href="/recommend">おすすめ</a></li>

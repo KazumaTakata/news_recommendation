@@ -37,6 +37,12 @@ Rails.application.routes.draw do
 
   get '/signup',  to: 'users#new'
   get '/search', to: 'searchs#index'
+  get '/search/result', to: 'searchs#show'
+
+
+
+
+
 
   resources :users
 

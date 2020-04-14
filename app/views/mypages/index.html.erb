@@ -1,6 +1,14 @@
+
+<h4 class="card-panel">
+  マイページ 
+</h4>
+
+
+
+
 <div>
   <% if @current_user.img %>
-    <%= @current_user.img %> 
+    <%= image_tag @current_user.img %> 
 <% else %>
    <%= image_tag "icons8-cat-profile-64.png" %> 
 <% end %>
